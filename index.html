@@ -3,33 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>0x41</title>
-  <meta name="description" content="0x41 builds AI tools for cybersecurity.">
+  <title>0x41 — Recon, decoded.</title>
+  <meta name="description" content="AI-powered recon and vulnerability triage, built by 0x41.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-    <h1>0x<span class="accent">41</span></h1>
-    <p>AI-powered tools for security work.</p>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">0x<span class="accent">41</span><span class="dim">.sh</span></a>
+      <div class="nav-links">
+        <a href="#monomi">./monomi</a>
+        <a href="#kaidoku">./kaidoku</a>
+        <a href="#contact">./contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="container hero">
+    <div class="hero-text">
+      <p class="prompt">&gt; trust nothing. verify all.</p>
+      <h1>Recon, decoded.</h1>
+      <p class="lead">AI-powered recon and vulnerability triage, built by 0x41.</p>
+      <div class="buttons">
+        <a href="#monomi" class="btn btn-primary">&gt; view tools</a>
+        <a href="https://github.com/0x41io" class="btn btn-outline">github.com/0x41io</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <img src="images/logo.jpg" alt="0x41 octopus logo" width="1000" height="1000">
+    </div>
   </header>
 
-  <main>
-    <section id="monomi">
-      <h2>Monomi</h2>
-      <p>Domain recon that does the analysis for you. Monomi maps a domain's attack surface from public sources (subdomains, hosting, open ports, known CVEs), then uses AI to turn the raw data into a prioritized security report.</p>
-      <a href="https://github.com/0x41io/monomi">View on GitHub</a>
-    </section>
+  <section id="monomi" class="section">
+    <div class="container split">
+      <div class="split-text">
+        <p class="label">01 / recon</p>
+        <h2>mønømi</h2>
+        <p class="body">Domain recon that does the analysis for you. Maps a domain's attack surface from public sources (subdomains, hosting, open ports, known CVEs), then uses AI to write a prioritized security report.</p>
+        <a href="https://github.com/0x41io/monomi">→ view on GitHub</a>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="dot" aria-hidden="true"></span>
+          <span class="dot" aria-hidden="true"></span>
+          <span class="terminal-title">monomi — example run</span>
+        </div>
+<pre class="terminal-body"><span class="t-prompt">$</span> python monomi.py example.com --enrich --ports --ai
+<span class="t-dim">[*] querying certificate transparency logs…</span>
+<span class="t-ok">[+]</span> subdomains discovered
+<span class="t-ok">[+]</span> hosts enriched (ASN, provider, country)
+<span class="t-warn">[!]</span> open ports matched to known CVEs
+<span class="t-ok">[+]</span> AI report → reports/example.com.md</pre>
+      </div>
+    </div>
+  </section>
 
-    <section id="kaidoku">
-      <h2>Kaidoku</h2>
-      <p>CVE triage in plain English. Kaidoku pulls vulnerability data from NVD and CISA's Known Exploited Vulnerabilities catalog, ranks what matters for your stack, and explains exploitability and business impact.</p>
-      <a href="https://github.com/0x41io/kaidoku">View on GitHub</a>
-    </section>
+  <section id="kaidoku" class="section">
+    <div class="container">
+      <div class="section-intro">
+        <p class="label">02 / triage</p>
+        <h2>kaidøku</h2>
+        <p class="body">CVE triage in plain English. Pulls data from NVD and CISA's Known Exploited Vulnerabilities catalog, ranks what matters for your stack, and explains exploitability and business impact.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <span class="feature-tag">batch</span>
+          <p>Paste a list or a scan export and get a ranked summary table.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">kev</span>
+          <p>Flags CVEs used in known ransomware campaigns, straight from CISA.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">profiles</span>
+          <p>Describe your stack once; in-stack CVEs rank first.</p>
+        </div>
+      </div>
+      <a href="https://github.com/0x41io/kaidoku">→ view on GitHub</a>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Questions, feedback, or collaboration: find 0x41 on GitHub.</p>
-      <a href="https://github.com/0x41io">github.com/0x41io</a>
-    </section>
-  </main>
+  <section id="contact" class="section">
+    <div class="container contact">
+      <div>
+        <p class="label">&gt; contact</p>
+        <h2 class="contact-title">Questions, feedback, or collaboration?</h2>
+        <p class="body">Open an issue or reach out on GitHub.</p>
+      </div>
+      <a href="https://github.com/0x41io" class="btn btn-outline-red">github.com/0x41io</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 0x41</span>
+      <span>0x41.sh</span>
+    </div>
+  </footer>
+
+</body>
+</html>
