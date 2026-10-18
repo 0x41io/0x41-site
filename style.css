@@ -12,7 +12,7 @@
   --yellow: #fbbf24;
   --mono: "JetBrains Mono", Consolas, monospace;
   --sans: "Space Grotesk", system-ui, sans-serif;
-}
+  --brand-font: "Fira Code", monospace;     
 
 /* ===== Base ===== */
 * {
@@ -76,10 +76,13 @@ img {
 }
 
 .brand {
-  font-weight: 800;
+  font-family: var(--brand-font);
+  font-feature-settings: "calt" 0;
+  font-weight: 700;
   font-size: 22px;
   color: #ffffff;
 }
+  
 
 .brand:hover {
   color: #ffffff;
