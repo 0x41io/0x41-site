@@ -6,8 +6,9 @@
   --border-strong: #2c2c2c;
   --text: #e6e6e6;
   --muted: #9e9e9e;
-  --red: #fa0201;
-  --red-hover: #ff4a49;
+  --red: #D71920;
+  --red-hover: #B8141A;
+  --red-text: #EF3A40;
   --green: #4ade80;
   --yellow: #fbbf24;
   --mono: "JetBrains Mono", Consolas, monospace;
@@ -37,7 +38,7 @@ a {
 }
 
 a:hover {
-  color: var(--red-hover);
+  color: #ffffff;
 }
 
 img {
@@ -53,7 +54,7 @@ img {
 }
 
 .accent {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .dim {
@@ -78,6 +79,9 @@ img {
 .brand {
   font-family: var(--brand-font);
   font-feature-settings: "calt" 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
   font-size: 22px;
   color: #ffffff;
@@ -86,6 +90,11 @@ img {
 
 .brand:hover {
   color: #ffffff;
+}
+
+.brand-icon {
+  width: 30px;
+  height: 30px;
 }
 
 .nav-links {
@@ -130,13 +139,13 @@ img {
 
 .hero-logo img {
   width: 100%;
-  max-width: 560px;
+  max-width: 380px;
 }
 
 .prompt {
   margin: 0;
   font-size: 16px;
-  color: var(--red);
+  color: var(--red-text);
 }
 
 h1 {
@@ -174,12 +183,12 @@ h1 {
 
 .btn-primary {
   background: var(--red);
-  color: #000000;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
   background: var(--red-hover);
-  color: #000000;
+  color: #ffffff;
 }
 
 .btn-outline {
@@ -195,12 +204,12 @@ h1 {
 
 .btn-outline-red {
   border: 1px solid var(--red);
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .btn-outline-red:hover {
   background: var(--red);
-  color: #000000;
+  color: #ffffff;
 }
 
 /* ===== Sections ===== */
@@ -212,7 +221,7 @@ h1 {
 .label {
   margin: 0;
   font-size: 15px;
-  color: var(--red);
+  color: var(--red-text);
 }
 
 h2 {
@@ -284,7 +293,7 @@ h2 {
   overflow-x: auto;
 }
 
-.t-prompt { color: var(--red); }
+.t-prompt { color: var(--red-text); }
 .t-ok     { color: var(--green); }
 .t-warn   { color: var(--yellow); }
 .t-dim    { color: #7a7a7a; }
@@ -322,7 +331,7 @@ h2 {
 
 .feature-tag {
   font-size: 15px;
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .feature p {
