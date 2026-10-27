@@ -59,7 +59,7 @@ img {
 }
 
 .dim {
-  color: #555555;
+  color: #ffffff;
 }
 
 /* ===== Nav ===== */
@@ -118,11 +118,11 @@ img {
 }
 
 .nav-links a {
-  color: #9a9a9a;
+  color: #ffffff;
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: var(--red-text);
 }
 
 /* ===== Hero ===== */
