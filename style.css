@@ -98,6 +98,18 @@ img {
   height: 36px;
 }
 
+/* "0x41" uses the logo's own lettering; ".sh" sits on its baseline */
+.brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.brand-wordmark {
+  height: 22px;
+  width: auto;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
