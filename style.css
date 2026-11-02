@@ -4,16 +4,14 @@
   --surface: #0c0c0c;
   --border: #1a1a1a;
   --border-strong: #2c2c2c;
-  --text: #e6e6e6;
-  --muted: #9e9e9e;
-  --red: #BD0012;        /* exact logo red */
-  --red-hover: #9A000F;
-  --red-text: #FF1A2F;   /* same red, brightened so small text stays readable on black */
+  --text: #ffffff;
+  --muted: #b5b5b5;
+  --white: #ffffff;      /* exact logo white: all lettering */
+  /* color only where it carries meaning (terminal status) */
   --green: #4ade80;
   --yellow: #fbbf24;
   --mono: "JetBrains Mono", Consolas, monospace;
   --sans: "Space Grotesk", system-ui, sans-serif;
-  --brand-font: "Fira Code", monospace;
 }
 
 /* ===== Base ===== */
@@ -34,12 +32,12 @@ body {
 }
 
 a {
-  color: var(--red-text);
+  color: var(--white);
   text-decoration: none;
 }
 
 a:hover {
-  color: #ffffff;
+  color: var(--muted);
 }
 
 img {
@@ -54,12 +52,8 @@ img {
   padding: 0 24px;
 }
 
-.accent {
-  color: var(--red);
-}
-
 .dim {
-  color: #ffffff;
+  color: var(--white);
 }
 
 /* ===== Nav ===== */
@@ -77,36 +71,24 @@ img {
   padding-bottom: 18px;
 }
 
+/* "0x41" wordmark with ".sh" sitting on its baseline */
 .brand {
-  font-family: var(--brand-font);
-  font-feature-settings: "calt" 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 22px;
-  color: #ffffff;
-}
-  
-
-.brand:hover {
-  color: #ffffff;
-}
-
-.brand-icon {
-  width: 36px;
-  height: 36px;
-}
-
-/* "0x41" uses the logo's own lettering; ".sh" sits on its baseline */
-.brand-name {
   display: inline-flex;
   align-items: baseline;
-  gap: 2px;
+  gap: 3px;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--white);
+}
+
+.brand:hover {
+  color: var(--white);
 }
 
 .brand-wordmark {
-  height: 22px;
+  height: 26px;
   width: auto;
 }
 
@@ -118,11 +100,11 @@ img {
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .nav-links a:hover {
-  color: var(--red-text);
+  color: var(--muted);
 }
 
 /* ===== Hero ===== */
@@ -150,15 +132,16 @@ img {
   justify-content: center;
 }
 
+/* big and bold, but leaves room for the headline */
 .hero-logo img {
   width: 100%;
-  max-width: 380px;
+  max-width: 460px;
 }
 
 .prompt {
   margin: 0;
   font-size: 16px;
-  color: var(--red-text);
+  color: var(--white);
 }
 
 h1 {
@@ -174,7 +157,7 @@ h1 {
   margin: 0;
   font-family: var(--sans);
   font-size: 22px;
-  color: var(--muted);
+  color: var(--white);
   max-width: 600px;
 }
 
@@ -195,34 +178,24 @@ h1 {
 }
 
 .btn-primary {
-  background: var(--red);
-  color: #ffffff;
+  background: var(--white);
+  color: var(--bg);
 }
 
 .btn-primary:hover {
-  background: var(--red-hover);
-  color: #ffffff;
+  background: #d6d6d6;
+  color: var(--bg);
 }
 
 .btn-outline {
-  border: 1px solid var(--border-strong);
-  color: var(--text);
+  border: 1px solid #555555;
+  color: var(--white);
   font-weight: 400;
 }
 
 .btn-outline:hover {
-  border-color: #555555;
-  color: #ffffff;
-}
-
-.btn-outline-red {
-  border: 1px solid var(--red);
-  color: var(--red-text);
-}
-
-.btn-outline-red:hover {
-  background: var(--red);
-  color: #ffffff;
+  border-color: var(--white);
+  color: var(--white);
 }
 
 /* ===== Sections ===== */
@@ -234,7 +207,7 @@ h1 {
 .label {
   margin: 0;
   font-size: 15px;
-  color: var(--red-text);
+  color: var(--white);
 }
 
 h2 {
@@ -248,7 +221,13 @@ h2 {
   font-family: var(--sans);
   font-size: 19px;
   line-height: 1.65;
-  color: #a8a8a8;
+  color: var(--white);
+}
+
+.meta {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 .split {
@@ -306,7 +285,7 @@ h2 {
   overflow-x: auto;
 }
 
-.t-prompt { color: var(--red-text); }
+.t-prompt { color: var(--white); }
 .t-ok     { color: var(--green); }
 .t-warn   { color: var(--yellow); }
 .t-dim    { color: #7a7a7a; }
@@ -338,13 +317,14 @@ h2 {
 }
 
 .feature:hover {
-  border-color: #5a0000;
+  border-color: #555555;
   background: #0e0e0e;
 }
 
 .feature-tag {
   font-size: 15px;
-  color: var(--red-text);
+  color: var(--white);
+  font-weight: 600;
 }
 
 .feature p {
@@ -352,7 +332,13 @@ h2 {
   font-family: var(--sans);
   font-size: 18px;
   line-height: 1.5;
-  color: #cfcfcf;
+  color: var(--white);
+}
+
+.features-after {
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  margin-top: 48px;
+  margin-bottom: 0;
 }
 
 /* ===== Contact ===== */
@@ -389,7 +375,7 @@ h2 {
   padding-top: 28px;
   padding-bottom: 40px;
   font-size: 15px;
-  color: #7a7a7a;
+  color: var(--muted);
 }
 
 /* ===== Phones ===== */
@@ -398,6 +384,9 @@ h2 {
   h2 { font-size: 36px; }
   .hero { padding-top: 48px; padding-bottom: 56px; }
   .section { padding: 56px 0; }
+  .hero-logo { order: -1; justify-content: flex-start; }
+  .hero-logo img { max-width: 260px; }
+  .brand-wordmark { height: 22px; }
 }
 
 /* ===== Reduced motion ===== */
