@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>0x41 — Recon, decoded.</title>
-  <meta name="description" content="AI-powered recon and vulnerability triage, built by 0x41.">
+  <meta name="description" content="Passive attack surface recon and CVE triage that explain what they find, and cite the evidence. Built by 0x41.">
+  <meta name="theme-color" content="#000000">
   <link rel="icon" href="images/favicon.ico" sizes="any">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -12,13 +13,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://0x41.sh/">
   <meta property="og:title" content="0x41 | Recon, decoded.">
-  <meta property="og:description" content="AI-powered recon and vulnerability triage, built by 0x41.">
+  <meta property="og:description" content="Passive attack surface recon and CVE triage that explain what they find, and cite the evidence.">
   <meta property="og:image" content="https://0x41.sh/images/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -26,7 +27,7 @@
 
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="#top"    class="brand"><img src="images/logo.svg" alt="" class="brand-icon"><span class="brand-name"><img src="images/wordmark.svg" alt="0x41" class="brand-wordmark" width="774" height="274"><span class="dim">.sh</span></span></a>
+      <a href="#top" class="brand"><img src="images/wordmark.svg" alt="0x41" class="brand-wordmark" width="806" height="293"><span class="dim">.sh</span></a>
       <div class="nav-links">
         <a href="#monomi">./monomi</a>
         <a href="#kaidoku">./kaidoku</a>
@@ -39,38 +40,70 @@
     <div class="hero-text">
       <p class="prompt">&gt; trust nothing. verify all.</p>
       <h1>Recon, decoded.</h1>
-      <p class="lead">AI-powered recon and vulnerability triage, built by 0x41.</p>
+      <p class="lead">Passive recon and CVE triage that explain what they find, and cite the evidence for every finding.</p>
       <div class="buttons">
         <a href="#monomi" class="btn btn-primary">&gt; view tools</a>
         <a href="https://github.com/0x41io" class="btn btn-outline">github.com/0x41io</a>
       </div>
     </div>
     <div class="hero-logo">
-      <img src="images/logo-stacked.svg" alt="0x41 logo" width="806" height="976">
+      <img src="images/wordmark.svg" alt="0x41" width="806" height="293">
     </div>
   </header>
 
   <section id="monomi" class="section">
-    <div class="container split">
-      <div class="split-text">
-        <p class="label">01 / recon</p>
-        <h2>mønømi</h2>
-        <p class="body">Domain recon that does the analysis for you. Maps a domain's attack surface from public sources (subdomains, hosting, open ports, known CVEs), then uses AI to write a prioritized security report.</p>
-        <a href="https://github.com/0x41io/monomi">→ view on GitHub</a>
-      </div>
-      <div class="terminal">
-        <div class="terminal-bar">
-          <span class="dot" aria-hidden="true"></span>
-          <span class="dot" aria-hidden="true"></span>
-          <span class="dot" aria-hidden="true"></span>
-          <span class="terminal-title">monomi — example run</span>
+    <div class="container">
+      <div class="split">
+        <div class="split-text">
+          <p class="label">01 / recon</p>
+          <h2>mønømi</h2>
+          <p class="body">Passive attack surface recon, explained. Monomi maps a domain's public footprint from certificate logs and public data, then Claude explains what it means: what's exposed, what deserves a closer look, and what to fix. Every finding cites numbered evidence, so you can check it yourself.</p>
+          <p class="meta">v1.7 · MIT · Python · CLI + MCP server</p>
+          <a href="https://github.com/0x41io/monomi">→ view on GitHub</a>
         </div>
-<pre class="terminal-body"><span class="t-prompt">$</span> python monomi.py example.com --enrich --ports --ai
-<span class="t-dim">[*] querying certificate transparency logs…</span>
-<span class="t-ok">[+]</span> subdomains discovered
-<span class="t-ok">[+]</span> hosts enriched (ASN, provider, country)
-<span class="t-warn">[!]</span> open ports matched to known CVEs
-<span class="t-ok">[+]</span> AI report → reports/example.com.md</pre>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="terminal-title">monomi — example run</span>
+          </div>
+<pre class="terminal-body"><span class="t-prompt">$</span> python monomi.py example.com --ports --email --takeover --ai
+<span class="t-dim">[*] asking 3 certificate transparency sources…</span>
+<span class="t-ok">[+]</span> 41 hostnames, merged and de-duplicated
+<span class="t-ok">[+]</span> 52 IPs checked: 38 CDN edge, 14 origin
+<span class="t-warn">[!]</span> 2 origin IPs with known CVEs
+<span class="t-ok">[+]</span> email: protected (SPF, DMARC, DKIM)
+<span class="t-ok">[+]</span> takeover: 0 leads, 1 stale record
+<span class="t-ok">[+]</span> AI report → reports/example.com.md
+<span class="t-dim">    every finding cited: [E12, E52]</span></pre>
+        </div>
+      </div>
+      <div class="features features-after">
+        <div class="feature">
+          <span class="feature-tag">evidence</span>
+          <p>Findings are labeled Observed, Inference or Lead, and every one cites its source and collection time.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">passive</span>
+          <p>Reads public data by default and never scans the target. The one active check is opt-in.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">checks</span>
+          <p>Subdomains, hosting, open ports and CVEs, email spoofing, subdomain takeover and security headers.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">mcp</span>
+          <p>Run it as an MCP server so AI agents like Claude can call its checks directly.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">ip intel</span>
+          <p>Check suspicious IPs for Tor, VPN, hosting or CDN edge. Every label names its source.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">kaidoku</span>
+          <p>Hands every CVE it finds straight to kaidøku for triage.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -107,7 +140,7 @@
         <h2 class="contact-title">Questions, feedback, or collaboration?</h2>
         <p class="body">Open an issue or reach out on GitHub.</p>
       </div>
-      <a href="https://github.com/0x41io" class="btn btn-outline-red">github.com/0x41io</a>
+      <a href="https://github.com/0x41io" class="btn btn-outline">github.com/0x41io</a>
     </div>
   </section>
 
