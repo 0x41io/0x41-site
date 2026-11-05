@@ -88,7 +88,14 @@ img {
 }
 
 .brand-wordmark {
-  height: 26px;
+  height: 32px;
+  width: auto;
+}
+
+/* [mønømi] and [kaidøku] logos as section titles.
+   Same height on both, so the text comes out the same size. */
+.product-logo {
+  height: 64px;
   width: auto;
 }
 
@@ -386,7 +393,8 @@ h2 {
   .section { padding: 56px 0; }
   .hero-logo { order: -1; justify-content: flex-start; }
   .hero-logo img { max-width: 260px; }
-  .brand-wordmark { height: 22px; }
+  .brand-wordmark { height: 28px; }
+  .product-logo { height: 48px; }
 }
 
 /* ===== Reduced motion ===== */
