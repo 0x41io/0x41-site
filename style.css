@@ -297,7 +297,7 @@ h2 {
 .t-warn   { color: var(--yellow); }
 .t-dim    { color: #7a7a7a; }
 
-/* ===== Kaidoku features ===== */
+/* ===== Feature cards ===== */
 .section-intro {
   display: flex;
   flex-direction: column;
@@ -308,7 +308,7 @@ h2 {
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 16px;
   margin-bottom: 32px;
 }
@@ -343,7 +343,7 @@ h2 {
 }
 
 .features-after {
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
   margin-top: 48px;
   margin-bottom: 0;
 }
@@ -400,4 +400,21 @@ h2 {
 /* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+/* ===== Kaidoku meta + 0x41 run ===== */
+.kaidoku-meta {
+  margin-bottom: 18px;
+}
+
+.run-title {
+  font-family: var(--mono);
+}
+
+.features-four {
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+}
+
+.features-six {
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
 }

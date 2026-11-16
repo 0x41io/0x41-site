@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>0x41 — Recon, decoded.</title>
-  <meta name="description" content="Passive attack surface recon and CVE triage that explain what they find, and cite the evidence. Built by 0x41.">
+  <title>0x41 — Find. Prove. Explain.</title>
+  <meta name="description" content="Open-source AI security tools: Monomi finds what a domain exposes, Akashi proves which leads are real, Kaidoku explains them. Built by 0x41.">
   <meta name="theme-color" content="#000000">
-  <link rel="icon" href="images/favicon.ico?v=3" sizes="any">
-  <link rel="icon" href="images/favicon.svg?v=3" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=3">
+  <link rel="icon" href="images/favicon.ico?v=4" sizes="any">
+  <link rel="icon" href="images/favicon.svg?v=4" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=4">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://0x41.sh/">
-  <meta property="og:title" content="0x41 | Recon, decoded.">
-  <meta property="og:description" content="Passive attack surface recon and CVE triage that explain what they find, and cite the evidence.">
-  <meta property="og:image" content="https://0x41.sh/images/og-image.png?v=3">
+  <meta property="og:title" content="0x41 | Find. Prove. Explain.">
+  <meta property="og:description" content="Monomi finds what a domain exposes, Akashi proves which leads are real, Kaidoku explains them. Every finding cites its evidence.">
+  <meta property="og:image" content="https://0x41.sh/images/og-image.png?v=4">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="#top" class="brand"><img src="images/logo-0x41.svg?v=3" alt="0x41" class="brand-wordmark" width="2824" height="1159"></a>
+      <a href="#top" class="brand"><img src="images/logo-0x41.svg?v=4" alt="0x41" class="brand-wordmark" width="2824" height="1159"></a>
       <div class="nav-links">
         <a href="#monomi">./monomi</a>
+        <a href="#akashi">./akashi</a>
         <a href="#kaidoku">./kaidoku</a>
         <a href="#contact">./contact</a>
       </div>
@@ -39,15 +40,15 @@
   <header id="top" class="container hero">
     <div class="hero-text">
       <p class="prompt">&gt; trust nothing. verify all.</p>
-      <h1>Recon, decoded.</h1>
-      <p class="lead">Passive recon and CVE triage that explain what they find, and cite the evidence for every finding.</p>
+      <h1>Find. Prove. Explain.</h1>
+      <p class="lead">Monomi finds what a domain exposes. Akashi proves which leads are real. Kaidoku explains what they mean and what to fix. Every finding cites its evidence.</p>
       <div class="buttons">
         <a href="#monomi" class="btn btn-primary">&gt; view tools</a>
         <a href="https://github.com/0x41io" class="btn btn-outline">github.com/0x41io</a>
       </div>
     </div>
     <div class="hero-logo">
-      <img src="images/logo-0x41.svg?v=3" alt="0x41" width="2824" height="1159">
+      <img src="images/logo-0x41.svg?v=4" alt="0x41" width="2824" height="1159">
     </div>
   </header>
 
@@ -56,9 +57,9 @@
       <div class="split">
         <div class="split-text">
           <p class="label">01 / recon</p>
-          <h2><img src="images/logo-monomi.svg?v=3" alt="mønømi" class="product-logo" width="4413" height="1159"></h2>
+          <h2><img src="images/logo-monomi.svg?v=4" alt="mønømi" class="product-logo" width="4413" height="1159"></h2>
           <p class="body">Passive attack surface recon, explained. Monomi maps a domain's public footprint from certificate logs and public data, then Claude explains what it means: what's exposed, what deserves a closer look, and what to fix. Every finding cites numbered evidence, so you can check it yourself.</p>
-          <p class="meta">v1.7 · MIT · Python · CLI + MCP server</p>
+          <p class="meta">v1.16 · MIT · Python · CLI + MCP server</p>
           <a href="https://github.com/0x41io/monomi">→ view on GitHub</a>
         </div>
         <div class="terminal">
@@ -68,7 +69,7 @@
             <span class="dot" aria-hidden="true"></span>
             <span class="terminal-title">monomi — example run</span>
           </div>
-<pre class="terminal-body"><span class="t-prompt">$</span> python monomi.py example.com --ports --email --takeover --ai
+<pre class="terminal-body"><span class="t-prompt">$</span> monomi example.com --ports --email --takeover --ai
 <span class="t-dim">[*] asking 3 certificate transparency sources…</span>
 <span class="t-ok">[+]</span> 41 hostnames, merged and de-duplicated
 <span class="t-ok">[+]</span> 52 IPs checked: 38 CDN edge, 14 origin
@@ -101,8 +102,61 @@
           <p>Check suspicious IPs for Tor, VPN, hosting or CDN edge. Every label names its source.</p>
         </div>
         <div class="feature">
-          <span class="feature-tag">kaidoku</span>
-          <p>Hands every CVE it finds straight to kaidøku for triage.</p>
+          <span class="feature-tag">hand-off</span>
+          <p>Hands its leads to ʌkʌshi to prove, and every CVE it finds to kaidøku to explain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="akashi" class="section">
+    <div class="container">
+      <div class="split">
+        <div class="split-text">
+          <p class="label">02 / proof</p>
+          <h2><img src="images/logo-akashi.svg?v=4" alt="ʌkʌshi" class="product-logo" width="3641" height="1159"></h2>
+          <p class="body">Proof before action. Akashi takes Monomi's leads and checks whether each one is really true today, before anyone acts on it. Every lead gets a verdict (confirmed, ruled out or inconclusive) with the evidence behind it and a fix written from what it actually found.</p>
+          <p class="meta">v0.2 · MIT · Python · CLI + Python API</p>
+          <a href="https://github.com/0x41io/akashi">→ view on GitHub</a>
+        </div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="terminal-title">akashi — example run</span>
+          </div>
+<pre class="terminal-body"><span class="t-prompt">$</span> akashi verify example.com.json
+<span class="t-dim">Run 2 check(s) now? 2 passive (DNS/registry,</span>
+<span class="t-dim">never contact the target).</span>
+<span class="t-dim">Type yes to run, anything else to cancel:</span> yes
+
+<span class="t-warn">[E14] email_spoofing: ✓ confirmed</span>
+<span class="t-dim">      DMARC policy now: none · reports (rua): none set</span>
+<span class="t-dim">      fix: (owner: DNS admin and email admin)</span>
+<span class="t-dim">        1. Add a reporting address to the DMARC record…</span>
+<span class="t-ok">[E21] takeover: ✗ ruled_out</span>
+<span class="t-dim">      shop.example.com no longer points at the deleted target</span>
+
+1 confirmed, 1 ruled out, 0 inconclusive.</pre>
+        </div>
+      </div>
+      <div class="features features-after features-four">
+        <div class="feature">
+          <span class="feature-tag">passive first</span>
+          <p>Proves leads from DNS and public registries by default. Active checks need a scope file and a typed yes, and show every request first.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">verdicts</span>
+          <p>Confirmed, ruled out or inconclusive, each with the reason and the evidence it saw.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">fixes</span>
+          <p>Fix steps built from the records it found for that domain, not a template, with who owns the fix.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">recheck</span>
+          <p>Applied a fix? Re-run the proof to confirm it's closed. Every verdict is kept in a proof history.</p>
         </div>
       </div>
     </div>
@@ -111,11 +165,19 @@
   <section id="kaidoku" class="section">
     <div class="container">
       <div class="section-intro">
-        <p class="label">02 / triage</p>
-        <h2><img src="images/logo-kaidoku.svg?v=3" alt="kaidøku" class="product-logo" width="4235" height="1159"></h2>
-        <p class="body">CVE triage in plain English. Pulls data from NVD and CISA's Known Exploited Vulnerabilities catalog, ranks what matters for your stack, and explains exploitability and business impact.</p>
+        <p class="label">03 / explain</p>
+        <h2><img src="images/logo-kaidoku.svg?v=4" alt="kaidøku" class="product-logo" width="4235" height="1159"></h2>
+        <p class="body">Findings and CVEs, explained in plain English. Kaidoku reads Akashi's proven findings and tells you what each one means, how serious it is and what to do next. For CVEs it pulls NVD and CISA's Known Exploited Vulnerabilities catalog, ranks what matters for your stack, and explains exploitability and business impact.</p>
       </div>
-      <div class="features">
+      <div class="features features-six">
+        <div class="feature">
+          <span class="feature-tag">findings</span>
+          <p>Reads ʌkʌshi's proof history: what's still open, what's fixed, and the next step for each.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-tag">cvss</span>
+          <p>CVSS 3.1 drives the ranking, with the 4.0 score and vector shown alongside.</p>
+        </div>
         <div class="feature">
           <span class="feature-tag">batch</span>
           <p>Paste a list or a scan export and get a ranked summary table.</p>
@@ -128,8 +190,44 @@
           <span class="feature-tag">profiles</span>
           <p>Describe your stack once; in-stack CVEs rank first.</p>
         </div>
+        <div class="feature">
+          <span class="feature-tag">briefings</span>
+          <p>With --ai, Claude writes a short briefing for each finding and CVE: what it affects and what to do.</p>
+        </div>
       </div>
+      <p class="meta kaidoku-meta">v0.8 · MIT · Python 3.10+ · CLI + Python API</p>
       <a href="https://github.com/0x41io/kaidoku">→ view on GitHub</a>
+    </div>
+  </section>
+
+  <section id="run" class="section">
+    <div class="container">
+      <div class="split">
+        <div class="split-text">
+          <p class="label">&gt; one command</p>
+          <h2 class="run-title">0x41 run</h2>
+          <p class="body">All three in one pass. Monomi scans, Akashi proves every lead it can, Kaidoku explains the results, and you get one report. Active proofs still wait for your scope file and your yes.</p>
+          <p class="meta">v0.1 · MIT · Python</p>
+          <a href="https://github.com/0x41io/0x41">→ view on GitHub</a>
+        </div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="terminal-title">0x41 run — example</span>
+          </div>
+<pre class="terminal-body"><span class="t-prompt">$</span> 0x41 run example.com --scope scope.txt
+
+<span class="t-dim">[1/4]</span> mønømi   scanning example.com (passive)
+<span class="t-dim">[2/4]</span> akashi   passive proofs (DNS / registry only, automatic)
+<span class="t-dim">[3/4]</span> akashi   active proofs (need your yes)
+<span class="t-dim">[4/4]</span> kaidoku  explaining
+
+<span class="t-ok">Report:</span> runs/example.com/…/report.md
+<span class="t-dim">        1 confirmed · 0 unclear · 1 ruled out</span></pre>
+        </div>
+      </div>
     </div>
   </section>
 
