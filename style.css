@@ -402,13 +402,9 @@ h2 {
   html { scroll-behavior: auto; }
 }
 
-/* ===== Kaidoku meta + 0x41 run ===== */
+/* ===== Kaidoku meta ===== */
 .kaidoku-meta {
   margin-bottom: 18px;
-}
-
-.run-title {
-  font-family: var(--mono);
 }
 
 .features-four {
