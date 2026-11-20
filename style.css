@@ -414,3 +414,169 @@ h2 {
 .features-six {
   grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
 }
+
+/* ===== Quick start (hero) ===== */
+.install {
+  background: var(--surface);
+  border: 1px solid #222222;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.install-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.install-title {
+  font-size: 13px;
+  color: #6a6a6a;
+}
+
+.copy-btn {
+  background: none;
+  border: 1px solid #555555;
+  border-radius: 4px;
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  border-color: var(--white);
+}
+
+.install-body {
+  margin: 0;
+  padding: 16px;
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.8;
+  overflow-x: auto;
+}
+
+/* ===== Section titles (how it works, faq) ===== */
+.section-title {
+  font-family: var(--sans);
+  line-height: 1.1;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ===== How it works: 01 → 02 → 03 ===== */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.step {
+  position: relative;
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* the arrow between steps */
+.step + .step::before {
+  content: "→";
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.step-num {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.step-name {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.step p {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.vet-split {
+  margin-top: 72px;
+}
+
+/* ===== FAQ ===== */
+.faq {
+  max-width: 880px;
+  border-top: 1px solid var(--border-strong);
+}
+
+.faq details {
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 22px 0;
+  font-family: var(--sans);
+  font-size: 21px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); }
+.faq details[open] summary::after { content: "−"; }
+
+.faq details p {
+  margin: 0 0 22px;
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.faq a { text-decoration: underline; }
+
+.faq code {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--white);
+}
+
+/* ===== Phones: new pieces ===== */
+@media (max-width: 800px) {
+  .steps { grid-template-columns: 1fr; gap: 32px; }
+  .step + .step::before {
+    content: "↓";
+    left: 50%;
+    top: -28px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title { font-size: 36px; }
+  .install-body { font-size: 13px; }
+  .faq summary { font-size: 18px; }
+}
