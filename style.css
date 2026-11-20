@@ -580,3 +580,16 @@ h2 {
   .install-body { font-size: 13px; }
   .faq summary { font-size: 18px; }
 }
+
+/* ===== Built by (contact) ===== */
+.builder {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.builder a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
