@@ -29,9 +29,11 @@
     <div class="container nav-inner">
       <a href="#top" class="brand"><img src="images/logo-0x41.svg?v=4" alt="0x41" class="brand-wordmark" width="2824" height="1159"></a>
       <div class="nav-links">
+        <a href="#how">./how</a>
         <a href="#monomi">./monomi</a>
         <a href="#akashi">./akashi</a>
         <a href="#kaidoku">./kaidoku</a>
+        <a href="#faq">./faq</a>
         <a href="#contact">./contact</a>
       </div>
     </div>
@@ -42,8 +44,19 @@
       <p class="prompt">&gt; trust nothing. verify all.</p>
       <h1>Find. Prove. Explain.</h1>
       <p class="lead">Monomi finds what a domain exposes. Akashi proves which leads are real. Kaidoku explains what they mean and what to fix. Every finding cites its evidence.</p>
+      <!-- Quick start: the main call to action. The copy button copies the
+           three commands below (see the small script at the end of the page). -->
+      <div class="install">
+        <div class="install-bar">
+          <span class="install-title">quick start · python 3.14</span>
+          <button type="button" class="copy-btn" data-copy="install-cmds">copy</button>
+        </div>
+<pre class="install-body" id="install-cmds"><span class="t-prompt">$</span> git clone https://github.com/0x41io/0x41.git &amp;&amp; cd 0x41
+<span class="t-prompt">$</span> pip install -e .
+<span class="t-prompt">$</span> 0x41 vet example.com</pre>
+      </div>
       <div class="buttons">
-        <a href="#monomi" class="btn btn-primary">&gt; view tools</a>
+        <a href="#how" class="btn btn-primary">&gt; how it works</a>
         <a href="https://github.com/0x41io" class="btn btn-outline">github.com/0x41io</a>
       </div>
     </div>
@@ -52,6 +65,61 @@
     </div>
   </header>
 
+  <!-- How it works: the whole pipeline at a glance, then 0x41 vet
+       (moved up from the bottom of the page) as the one command that runs it. -->
+  <section id="how" class="section">
+    <div class="container">
+      <div class="section-intro">
+        <p class="label">&gt; how it works</p>
+        <h2 class="section-title">Three tools. One report.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">01 / find</span>
+          <span class="step-name">mønømi</span>
+          <p>Maps what a domain exposes from public data, and flags the leads worth a closer look.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">02 / prove</span>
+          <span class="step-name">ʌkʌshi</span>
+          <p>Checks each lead: confirmed, ruled out or inconclusive, with the evidence it saw.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">03 / explain</span>
+          <span class="step-name">kaidøku</span>
+          <p>Explains what each proven finding and CVE means, how serious it is and what to fix.</p>
+        </li>
+      </ol>
+
+      <div id="vet" class="split vet-split">
+        <div class="split-text">
+          <p class="label">&gt; one command</p>
+          <h2><img src="images/logo-0x41-vet.svg?v=5" alt="0x41 vet" class="product-logo" width="4499" height="1159"></h2>
+          <p class="body">All three in one pass. Monomi scans, Akashi proves every lead it can, Kaidoku explains the results, and you get one report. Active proofs still wait for your scope file and your yes.</p>
+          <p class="meta">v0.4 · MIT · Python</p>
+          <a href="https://github.com/0x41io/0x41">→ view on GitHub</a>
+        </div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="terminal-title">0x41 vet — example</span>
+          </div>
+<pre class="terminal-body"><span class="t-prompt">$</span> 0x41 vet example.com --scope scope.txt
+
+<span class="t-dim">[1/4]</span> mønømi   scanning example.com (passive)
+<span class="t-dim">[2/4]</span> akashi   passive proofs (DNS / registry only, automatic)
+<span class="t-dim">[3/4]</span> akashi   active proofs (need your yes)
+<span class="t-dim">[4/4]</span> kaidoku  explaining
+
+<span class="t-ok">Report:</span> runs/example.com/…/report.md
+<span class="t-dim">        1 confirmed · 0 unclear · 1 ruled out</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="monomi" class="section">
     <div class="container">
       <div class="split">
@@ -59,7 +127,7 @@
           <p class="label">01 / recon</p>
           <h2><img src="images/logo-monomi.svg?v=4" alt="mønømi" class="product-logo" width="4413" height="1159"></h2>
           <p class="body">Passive attack surface recon, explained. Monomi maps a domain's public footprint from certificate logs and public data, then Claude explains what it means: what's exposed, what deserves a closer look, and what to fix. Every finding cites numbered evidence, so you can check it yourself.</p>
-          <p class="meta">v1.16 · MIT · Python · CLI + MCP server</p>
+          <p class="meta">v1.19 · MIT · Python · CLI + MCP server</p>
           <a href="https://github.com/0x41io/monomi">→ view on GitHub</a>
         </div>
         <div class="terminal">
@@ -195,38 +263,44 @@
           <p>With --ai, Claude writes a short briefing for each finding and CVE: what it affects and what to do.</p>
         </div>
       </div>
-      <p class="meta kaidoku-meta">v0.8 · MIT · Python 3.10+ · CLI + Python API</p>
+      <p class="meta kaidoku-meta">v0.10 · MIT · Python 3.10+ · CLI + Python API</p>
       <a href="https://github.com/0x41io/kaidoku">→ view on GitHub</a>
     </div>
   </section>
 
-  <section id="vet" class="section">
+  <!-- FAQ: native <details> elements, so each answer opens on click
+       with no JavaScript needed. -->
+  <section id="faq" class="section">
     <div class="container">
-      <div class="split">
-        <div class="split-text">
-          <p class="label">&gt; one command</p>
-          <h2><img src="images/logo-0x41-vet.svg?v=5" alt="0x41 vet" class="product-logo" width="4499" height="1159"></h2>
-          <p class="body">All three in one pass. Monomi scans, Akashi proves every lead it can, Kaidoku explains the results, and you get one report. Active proofs still wait for your scope file and your yes.</p>
-          <p class="meta">v0.2 · MIT · Python</p>
-          <a href="https://github.com/0x41io/0x41">→ view on GitHub</a>
-        </div>
-        <div class="terminal">
-          <div class="terminal-bar">
-            <span class="dot" aria-hidden="true"></span>
-            <span class="dot" aria-hidden="true"></span>
-            <span class="dot" aria-hidden="true"></span>
-            <span class="terminal-title">0x41 vet — example</span>
-          </div>
-<pre class="terminal-body"><span class="t-prompt">$</span> 0x41 vet example.com --scope scope.txt
-
-<span class="t-dim">[1/4]</span> mønømi   scanning example.com (passive)
-<span class="t-dim">[2/4]</span> akashi   passive proofs (DNS / registry only, automatic)
-<span class="t-dim">[3/4]</span> akashi   active proofs (need your yes)
-<span class="t-dim">[4/4]</span> kaidoku  explaining
-
-<span class="t-ok">Report:</span> runs/example.com/…/report.md
-<span class="t-dim">        1 confirmed · 0 unclear · 1 ruled out</span></pre>
-        </div>
+      <div class="section-intro">
+        <p class="label">&gt; faq</p>
+        <h2 class="section-title">Questions, answered.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Does it touch the target?</summary>
+          <p>Not by default. Monomi reads public certificate logs and public data, and makes standard DNS lookups. Akashi proves leads from DNS and public registries. Anything active (a request to the target's own servers) only runs when you ask for it, stays inside your scope file, and Akashi shows every request and waits for a typed yes first.</p>
+        </details>
+        <details>
+          <summary>Who can I run it on?</summary>
+          <p>Domains you own, or ones you have permission to assess, like a bug bounty program you're in scope for. The scope file uses the same in/out format as a program's page.</p>
+        </details>
+        <details>
+          <summary>What if it finds nothing?</summary>
+          <p>A clean run means these checks found nothing in public data at that moment. It doesn't mean the domain is secure. Trust nothing, verify all, including a clean report.</p>
+        </details>
+        <details>
+          <summary>Does it cost anything?</summary>
+          <p>No. Every tool is free and open source under the MIT license. Optional keys make it better: a free OTX key for more subdomains, an NVD key for faster CVE lookups, and an Anthropic API key only if you want <code>--ai</code> briefings written by Claude (billed by Anthropic to your key).</p>
+        </details>
+        <details>
+          <summary>What do I need to run it?</summary>
+          <p>Python 3.14 and git. The tools aren't on PyPI yet, so you install from GitHub. The <a href="https://github.com/0x41io/0x41#install">0x41 README</a> pins versions that are tested together. Works on Linux, macOS and Windows.</p>
+        </details>
+        <details>
+          <summary>Can AI agents use it?</summary>
+          <p>Yes. Monomi and 0x41 run as MCP servers, so agents like Claude can call the checks directly. Active checks stay off unless you turn them on, and only reach hosts in a scope file you approved.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -248,6 +322,21 @@
       <span>0x41.sh</span>
     </div>
   </footer>
+
+  <!-- Copy button for the quick start. Copies the commands without the "$ "
+       prompts, and shows "copied" for a moment. -->
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var src = document.getElementById(btn.dataset.copy);
+        var text = src.innerText.replace(/^\$ /gm, '');
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'copied';
+          setTimeout(function () { btn.textContent = 'copy'; }, 1500);
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
